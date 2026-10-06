@@ -1,0 +1,254 @@
+:root {
+  --paper: #f7f4ec;
+  --paper-alt: #efebdf;
+  --ink: #23241f;
+  --ink-soft: #6b6759;
+  --indigo: #2f4b7c;
+  --indigo-deep: #1f3457;
+  --indigo-wash: #e7ecf4;
+  --correct: #3f7d58;
+  --correct-wash: #e7f1ea;
+  --incorrect: #b14632;
+  --incorrect-wash: #f5e7e3;
+  --border: #ded7c4;
+
+  --font-display: "Shippori Mincho", serif;
+  --font-body: "Zen Kaku Gothic New", system-ui, sans-serif;
+
+  font: 16px/1.6 var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.app-shell {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.app-title {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+/* Buttons */
+.btn {
+  font: inherit;
+  font-weight: 500;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.65rem 1.1rem;
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--ink-soft);
+}
+
+.btn:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.btn-primary {
+  background: var(--indigo);
+  border-color: var(--indigo);
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--indigo-deep);
+  border-color: var(--indigo-deep);
+}
+
+.btn-text {
+  background: transparent;
+  border: none;
+  color: var(--ink-soft);
+  padding: 0.4rem 0.6rem;
+}
+
+.btn-text:hover {
+  color: var(--ink);
+}
+
+.btn-block {
+  width: 100%;
+  text-align: left;
+}
+
+/* Form fields */
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+input,
+select {
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.55rem 0.65rem;
+}
+
+input:focus,
+select:focus,
+button:focus-visible {
+  outline: 2px solid var(--indigo);
+  outline-offset: 1px;
+}
+
+/* Word list */
+.word-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.word-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.word-list li:last-child {
+  border-bottom: none;
+}
+
+.word-term {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+}
+
+.word-meta {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* Quiz screen */
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.quiz-timer {
+  font-variant-numeric: tabular-nums;
+}
+
+.quiz-term {
+  font-size: 2.75rem;
+  text-align: center;
+  margin: 2rem 0 0.25rem;
+}
+
+.quiz-reading {
+  text-align: center;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.quiz-option {
+  border-left: 3px solid transparent;
+}
+
+.quiz-option.is-correct {
+  background: var(--correct-wash);
+  border-left-color: var(--correct);
+}
+
+.quiz-option.is-incorrect {
+  background: var(--incorrect-wash);
+  border-left-color: var(--incorrect);
+}
+
+.quiz-feedback {
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quiz-feedback-text.is-correct {
+  color: var(--correct);
+}
+
+.quiz-feedback-text.is-incorrect {
+  color: var(--incorrect);
+}
+
+/* Session setup */
+.mode-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mode-toggle .btn.is-active {
+  background: var(--indigo-wash);
+  border-color: var(--indigo);
+  color: var(--indigo-deep);
+}
+
+.preset-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.preset-row .btn.is-selected {
+  background: var(--indigo);
+  border-color: var(--indigo);
+  color: #fff;
+}
+
+.empty-state {
+  color: var(--ink-soft);
+}
