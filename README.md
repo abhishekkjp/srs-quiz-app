@@ -1,10 +1,5 @@
 # 漢字ノート — Japanese Kanji & Vocabulary Spaced Repetition App
 
-A full-stack spaced repetition system (SRS) for studying Japanese kanji and vocabulary, built from scratch with the MERN stack and TypeScript end-to-end. Implements the SM-2 scheduling algorithm (the same algorithm family behind Anki) to decide what you should review and when, based on how well you actually remember it.
-
-**Live app:** [your-app.vercel.app](https://srs-quiz-app-edr5.vercel.app/)
-**API:** [your-api.onrender.com/api/health](https://your-api.onrender.com/api/health)
-
 <details>
 <summary><strong>日本語で見る / View in Japanese</strong></summary>
 
@@ -83,6 +78,10 @@ UI は、よくあるテンプレート的な SaaS デザイン(カード+ドロ
 </details>
 
 
+A full-stack spaced repetition system (SRS) for studying Japanese kanji and vocabulary, built from scratch with the MERN stack and TypeScript end-to-end. Implements the SM-2 scheduling algorithm (the same algorithm family behind Anki) to decide what you should review and when, based on how well you actually remember it.
+
+**Live app:** [your-app.vercel.app](https://srs-quiz-app-edr5.vercel.app/)
+**API:** [your-api.onrender.com/api/health](https://your-api.onrender.com/api/health)
 
 
 ---
@@ -188,6 +187,9 @@ srs-quiz-app/
 **Prerequisites:** Node.js 18+, a MongoDB Atlas connection string (free tier is sufficient).
 
 \```bash
+
+
+
 # Backend
 cd server
 cp .env.example .env     # fill in MONGO_URI
