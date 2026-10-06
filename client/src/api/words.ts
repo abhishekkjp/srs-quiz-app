@@ -1,13 +1,20 @@
 import type { NewWordInput, Word } from "../types/word";
+import { API_BASE } from "./config";
 
 export async function fetchWords(): Promise<Word[]> {
-  const res = await fetch("/api/words");
+  const res = await fetch(`${API_BASE}/api/words`);
   if (!res.ok) throw new Error("Failed to fetch words");
   return res.json();
 }
 
+export async function fetchDueWords(): Promise<Word[]> {
+  const res = await fetch(`${API_BASE}/api/words/due`);
+  if (!res.ok) throw new Error("Failed to fetch due words");
+  return res.json();
+}
+
 export async function createWord(input: NewWordInput): Promise<Word> {
-  const res = await fetch("/api/words", {
+  const res = await fetch(`${API_BASE}/api/words`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(input),
@@ -21,16 +28,8 @@ export async function createWord(input: NewWordInput): Promise<Word> {
   return res.json();
 }
 
-
-
-export async function fetchDueWords(): Promise<Word[]> {
-  const res = await fetch("/api/words/due");
-  if (!res.ok) throw new Error("Failed to fetch due words");
-  return res.json();
-}
-
 export async function submitReview(wordId: string, correct: boolean): Promise<Word> {
-  const res = await fetch(`/api/words/${wordId}/review`, {
+  const res = await fetch(`${API_BASE}/api/words/${wordId}/review`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ correct }),
